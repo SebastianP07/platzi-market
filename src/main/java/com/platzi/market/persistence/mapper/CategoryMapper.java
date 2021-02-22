@@ -16,7 +16,7 @@ public interface CategoryMapper {
     })
     Category toCategory(Categoria categoria);
 
-    @InheritInverseConfiguration // Toma el mapeo de manera inversa
+    @InheritInverseConfiguration
     @Mapping(target = "productos", ignore = true)
     Categoria toCategoria(Category category);
 }

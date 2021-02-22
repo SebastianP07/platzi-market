@@ -9,7 +9,6 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-// Al colocar uses = {CategoryMapper.class}, le indico que el Mapping category lo hace desde categoria
 @Mapper(componentModel = "spring", uses = {CategoryMapper.class})
 public interface ProductMapper {
     @Mappings({
@@ -22,10 +21,9 @@ public interface ProductMapper {
             @Mapping(source = "categoria", target = "category"),
     })
     Product toProduct(Producto producto);
-
     List<Product> toProducts(List<Producto> productos);
 
-    @InheritInverseConfiguration // Toma el mapeo de manera inversa
+    @InheritInverseConfiguration
     @Mapping(target = "codigoBarras", ignore = true)
     Producto toProducto(Product product);
 }
