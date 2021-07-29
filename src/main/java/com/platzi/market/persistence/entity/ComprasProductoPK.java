@@ -4,12 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
-@Embeddable
+@Embeddable // SE COLOCA PARA EMBEDER LA CLASE DENTRO DE OTRA
 public class ComprasProductoPK implements Serializable {
-    @Column(name = "id_compra")
+    @Column(name = "id_compra") // SE COLOCA CUANDO LA VARIABLE SE LLAMA DIFERENTE A LA COLUMNA
     private Integer idCompra;
 
-    @Column(name = "id_producto")
+    @Column(name = "id_producto") // SE COLOCA CUANDO LA VARIABLE SE LLAMA DIFERENTE A LA COLUMNA
     private Integer idProducto;
 
     public Integer getIdCompra() {
