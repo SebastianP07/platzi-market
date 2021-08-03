@@ -6,9 +6,11 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 @Mapper(componentModel = "spring", uses = {CategoryMapper.class}) // uses se utiliza para indicarle hacia que objeto deme mapear
 public interface ProductMapper {
     @Mappings({
