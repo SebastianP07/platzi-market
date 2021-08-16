@@ -17,6 +17,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping()
+    // ApiOperation - ApiResponse: Utilizados para ser mas diciente en Swagger
     @ApiOperation(value = "Obtenemos todos los productos del supermercado", authorizations = { @Authorization(value="JWT") })
     @ApiResponse(code = 200, message = "ok")
     public ResponseEntity<List<Product>> getAll() {
@@ -24,6 +25,8 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
+    // ApiOperation - ApiResponse: Utilizados para ser mas diciente en Swagger
+    // ApiParam: le indicamos a la documentacion un ejemplo para el consumo
     @ApiOperation(value = "Busca el producto con el ID", authorizations = { @Authorization(value="JWT") })
     @ApiResponses({
             @ApiResponse(code = 200, message = "OK"),
@@ -37,6 +40,7 @@ public class ProductController {
     }
 
     @GetMapping("/category/{id}")
+    // ApiOperation - ApiResponse: Utilizados para ser mas diciente en Swagger
     @ApiOperation(value = "Buscamos el producto por categoria e ID", authorizations = { @Authorization(value="JWT") })
     public ResponseEntity<List<Product>> getByCategory(@PathVariable("id") Integer categoryId) {
         return productService.getByCategory(categoryId)
@@ -45,12 +49,14 @@ public class ProductController {
     }
 
     @PostMapping()
+    // ApiOperation - ApiResponse: Utilizados para ser mas diciente en Swagger
     @ApiOperation(value = "Insertamos un producto", authorizations = { @Authorization(value="JWT") })
     public ResponseEntity<Product> save(@RequestBody Product product) {
         return new ResponseEntity<>(productService.save(product), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
+    // ApiOperation - ApiResponse: Utilizados para ser mas diciente en Swagger
     @ApiOperation(value = "Borramos un producto por su ID", authorizations = { @Authorization(value="JWT") })
     public ResponseEntity delete(@PathVariable("id") int productId) {
         if (productService.delete(productId)) {

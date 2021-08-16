@@ -3,12 +3,12 @@ package com.platzi.market.persistence.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "productos")
+@Table(name = "productos")  // USADO POR QUE LA TABLA SE LLAMA DIFERENTE A LA CLASE
 public class Producto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_producto")
+    @Id // SE COLOCA POR QUE ES UNA LLAVE PRIMARIA SENCILLA
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // AGREGAMOS POR QUE LA CLAVE PRIMARIA SE VA A GENERAR CUANDO CREAMOS UN PRODUCTO
+    @Column(name = "id_producto") // USADO POR QUE LA COLUMNA SE LLAMA DIFERENTE A LA CLASE
     private Integer idProducto;
 
     private String nombre;

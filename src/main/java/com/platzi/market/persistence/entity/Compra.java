@@ -5,12 +5,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "compras")
+@Table(name = "compras") // USADO POR QUE LA TABLA SE LLAMA DIFERENTE A LA CLASE
 public class Compra {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_compra")
+    @Id // SE COLOCA POR QUE ES UNA LLAVE PRIMARIA SENCILLA
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // AGREGAMOS POR QUE LA CLAVE PRIMARIA SE VA A GENERAR CUANDO CREAMOS UN PRODUCTO
+    @Column(name = "id_compra") // USADO POR QUE LA COLUMNA SE LLAMA DIFERENTE A LA CLASE
     private Integer idCompra;
 
     @Column(name = "id_cliente")

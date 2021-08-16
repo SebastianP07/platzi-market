@@ -9,11 +9,9 @@ import java.util.Optional;
 
 public interface ProductoCrudRepository extends CrudRepository<Producto, Integer> {
 
-    /*
-        Con Query nativo
-        @Query(value = "SELECT * FROM productos WHERE id_categoria = ?", nativeQuery = true)
-        List<Producto> getByCategria(int idCategoria);
-    */
+    /*Con Query nativo */
+    @Query(value = "SELECT * FROM productos WHERE id_categoria = ?", nativeQuery = true)
+    List<Producto> getByCategria(int idCategoria);
 
     List<Producto> findByIdCategoriaOrderByNombreAsc(int idCategoria);
 
