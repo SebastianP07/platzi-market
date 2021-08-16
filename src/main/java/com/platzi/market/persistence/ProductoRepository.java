@@ -12,12 +12,13 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Repository // le indicamos a Spring que esa clase va a interactuar con la BD
+// @Component Es una generalizacion de este tipo de anotaciones, le estamos indicando que es un componente de Spring
 public class ProductoRepository implements ProductRepository {
-    @Autowired
+    @Autowired // Le sedemos el control a Spring para que cree las instancias
     private ProductoCrudRepository productoCrudRepository;
 
-    @Autowired
+    @Autowired // Le sedemos el control a Spring para que cree las instancias
     private ProductMapper mapper;
 
     @Override

@@ -3,9 +3,9 @@ package com.platzi.market.persistence.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "compras_productos")
+@Table(name = "compras_productos") // USADO POR QUE LA TABLA SE LLAMA DIFERENTE A LA CLASE
 public class ComprasProducto {
-    @EmbeddedId
+    @EmbeddedId // USADO CUANDO LA CLAVE PRIMARIA ES COMPUESTA Y ESTA DADA POR OTRA CLASE
     private ComprasProductoPK id;
 
     private Integer cantidad;

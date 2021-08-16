@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring") // Le indicamos al proyecto que es un mapeador
 public interface CategoryMapper {
     @Mappings({
             @Mapping(source = "idCategoria", target = "categoryId"),
@@ -16,7 +16,7 @@ public interface CategoryMapper {
     })
     Category toCategory(Categoria categoria);
 
-    @InheritInverseConfiguration
-    @Mapping(target = "productos", ignore = true)
+    @InheritInverseConfiguration // Le indica que la conversion es la inversa que se ejecuto antes
+    @Mapping(target = "productos", ignore = true) // Con esto ignoramos ese atributo
     Categoria toCategoria(Category category);
 }
