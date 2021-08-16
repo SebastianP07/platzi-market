@@ -30,7 +30,7 @@ public class JwtFilterRequest extends OncePerRequestFilter {
         String authorizationHeader = request.getHeader("Authorization");
 
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer")) {
-            String jwt = authorizationHeader.substring(7); // Descontamos el Bearer y el espcio
+            String jwt = authorizationHeader.substring(7); // Descontamos el Bearer y el espacio (Bearer d4sadajskdasd)
             String username = jwtUtil.extractUsername(jwt); // Verifico el usuario de ese JWT
 
             // Verifico que no exista una autenticacion para este usuario
